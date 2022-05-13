@@ -1,0 +1,118 @@
+body {
+    background-color: map-get($map: $colors, $key: 'palette1');
+    font-size: 2rem;
+    color: white;
+    header {
+        color: map-get($map: $colors, $key: 'palette5');
+    }
+    main {
+        section {
+            #list-of-articles {
+                background-color: map-get($map: $colors, $key: 'background2');
+                #main-container {
+                    width: 100%;
+                    #item-card {
+                        margin: 0;
+                        width: 40%;
+                        #item-description {
+                            color: map-get($map: $colors, $key: 'palette1');
+                            background-color: map-get($map: $colors, $key: 'palette4');
+                            border-radius: 1rem;
+                            #buttons {
+                                .btn-add {
+                                    background-color: map-get($map: $colors, $key: 'palette1');
+                                    color: white;
+                                }
+                                .desc {
+                                    background-color: map-get($map: $colors, $key: 'palette3');
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            #shopping-cart {
+                background-color: map-get($map: $colors, $key: 'palette3');
+                padding: 2rem;
+                #selected-items {
+                    color: white;
+                    tbody {
+                        tr {
+                            .delete {
+                                .btn {
+                                    color: red;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            #add-personalized {
+                background-color: map-get($map: $colors, $key: 'palette5');
+                border-radius: 0.5rem;
+                width: 50%;
+                margin: 2rem auto 2rem auto;
+                #add-button {
+                    color: map-get($map: $colors, $key: 'palette1');
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    aside {
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+            color: black;
+            .modal-content {
+                background-color: #fefefe;
+                margin: 15% auto;
+                /* 15% from the top and centered */
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
+                /* Could be more or less, depending on screen size */
+                .close {
+                    color: #aaa;
+                    float: right;
+                    font-size: 28px;
+                    font-weight: bold;
+                    &:hover,
+                    &:focus {
+                        color: black;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+                }
+            }
+            #create-button-div {
+                background-color: map-get($map: $colors, $key: 'palette5');
+                border-radius: 1rem;
+                width: 50%;
+                margin: 5rem auto;
+                padding: auto;
+                #create-button {
+                    font-weight: bold;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

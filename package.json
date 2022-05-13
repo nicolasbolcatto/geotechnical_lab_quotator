@@ -1,0 +1,21 @@
+{
+    "name": "presupuestador_geotecnico",
+    "version": "1.0.0",
+    "description": "presupuestador de trabajos geotecnicos",
+    "main": "main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build-css": "node-sass --include-path scss scss/style.scss main.css",
+        "watch-css": "nodemon -e scss -x \"npm     run build-css\""
+    },
+    "keywords": [
+        "presupuesto",
+        "geotecnia"
+    ],
+    "author": "nicobolcatto",
+    "license": "ISC",
+    "devDependencies": {
+        "node-sass": "^7.0.1",
+        "nodemon": "^2.0.15"
+    }
+}

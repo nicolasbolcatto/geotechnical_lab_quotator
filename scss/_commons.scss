@@ -1,0 +1,23 @@
+//General settings
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+//Fonts
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap');
+$primaryFont: 'Rubik',
+sans-serif;
+//Colors
+$colors:(
+'background1': rgba(114, 114, 114, 0.1),
+'background2': rgba(114, 114, 114, 0.25),
+'background3': rgba(114, 114, 114, 0.5),
+'palette1': rgba(16, 69, 79, 1),
+'palette2': rgba(79, 98, 102, 1),
+'palette3': rgba(128, 130, 116, 0.5),
+'palette4': rgba(163, 170, 119, 1),
+'palette5': rgba(189, 224, 55, 1)
+)

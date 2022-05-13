@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuestador Geotécnico</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <header class="py-5">
+        <h1 class="text-center display-3 fw-bold">Presupuestador Geotécnico</h1>
+    </header>
+
+    <main class="container-fluid">
+        <section id="page" class="row">
+            <article id="list-of-articles" class="col-sm-12 col-md-12 col-lg-7">
+                <div id="main-container" class="row">
+
+                </div>
+            </article>
+
+            <article id="shopping-cart" class="col-sm-12 col-md-12 col-lg-5">
+                <h2>Ensayos seleccionados:</h2>
+                <table id="selected-items" class="table">
+                    <thead>
+                        <tr class="fs-2">
+                            <th scope="col">Item Nº</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Precio unitario ($)</th>
+                            <th scope="col">Precio total ($)</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="added-items-data">
+
+                    </tbody>
+                </table>
+                <div class="fs-2" id="total-price">
+
+                </div>
+            </article>
+            <article id="add-personalized">
+                <a id="add-button" href="#" class="btn fs-3 d-block m-2">Agregar un item personalizado</a>
+            </article>
+        </section>
+    </main>
+
+    <aside id="aside">
+
+    </aside>
+
+    <footer>
+        <div class="row py-3">
+            <div class="col">
+                <p class="text-center display-6">Desarrollado por Nico Bolcatto</p>
+                <p class="text-center display-6">nicobolcatto@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!--My scripts-->
+    <script src="/items.js"></script>
+    <script src="/functions.js"></script>
+    <script src="/main.js"></script>
+</body>
+
+</html>
