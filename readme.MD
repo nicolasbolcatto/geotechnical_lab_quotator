@@ -21,10 +21,9 @@ The following languages, platforms, features and technologies are included in th
 Still to add:
 
 - Animations and transitions using CSS and AOS (https://michalsnik.github.io/aos/)
-- Storage and JSON
+- JavaScript libraries like Sweet Alert
 - jQuery
 - AJAX & Fetch
-- Optimizing code
 
 # Functionality
 

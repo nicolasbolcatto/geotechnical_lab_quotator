@@ -13,7 +13,7 @@ class Item {
 
 //Declaro el array de partida que define el conjunto de items básicos disponibles para elegir
 
-let arrayItems = [{
+let database = [{
     id: 1,
     name: "Humedad Natural y Clasificación",
     price: 1840,
@@ -85,21 +85,11 @@ let arrayItems = [{
     unit: "muestra"
 }];
 
-/*Se crean los elementos que representan cada item en el html*/
-arrayItems.forEach(element => {
-    let createItems = document.createElement("div");
-    createItems.innerHTML = `
-            <div id="item-description" class="p-3">
-                <p class="card-title fs-2 fw-bold">${element.name}</p>
-                <p class="card-text fs-3">Precio: $${element.price}</p>
-                <p class="card-text fs-3">Unidad: ${element.unit}</p>
-                <div id="buttons" class="">
-                    <a id="add-button-${element.id}" href="#" class="btn btn-add fs-3 d-block my-2 fw-bold">Agregar</a>
-                    <input id="input-${element.id}" type="number" class="form-control fs-2 d-block my-2" value="1" aria-label="Quantity" aria-describedby="input-group-left">
-                    <a id="desc-button-${element.id}" href="#" class="desc btn fs-3 d-block my-2 fw-bold">Ver descripción</a>
-                </div> 
-            </div>`;
-    createItems.setAttribute("id", "item-card");
-    createItems.setAttribute("class", "w-100 my-3 ms-2");
-    document.querySelector("#main-container").appendChild(createItems);
-});
+function saveItemsLocalStorage(array){
+    localStorage.setItem("array", JSON.stringify(array));
+}
+
+function loadItemsLocalStorage(){
+    return JSON.parse(localStorage.getItem("array"));
+}
+
