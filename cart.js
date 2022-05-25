@@ -30,9 +30,29 @@ function addToCart(id){
 }
 
 function deleteCart(){
-    localStorage.removeItem("cart");
-    updateCartButton();
-    renderSelectedItems();
+    Swal.fire({
+        icon: 'warning',
+        title: 'Atención!',
+        text: 'Está seguro de eliminar todos los items?',
+        showDenyButton: true,
+        confirmButtonText: 'Si',
+        denyButtonText: 'No',
+        customClass: {
+            actions: 'my-actions',
+            cancelButton: 'order-1 right-gap',
+            confirmButton: 'order-2',
+            denyButton: 'order-3',
+        }
+        }).then((result) => {
+        if (result.isConfirmed) {
+            localStorage.removeItem("cart");
+            updateCartButton();
+            renderSelectedItems();
+        }
+        })
+
+
+    
 }
 
 function deleteSingleItem(id){
@@ -63,7 +83,7 @@ function increaseQuantity(id){
 
 function updateCartButton(){
     let itemsInCart = loadCartItems();
-    let content=`<button type="button" class="btn btn-warning position-relative fs-2 mx-4">Ir al carrito<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">${itemsInCart.length}</span></button>`;
+    let content=`<button type="button" class="btn position-relative fs-2 mx-4">Ir al carrito<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">${itemsInCart.length}</span></button>`;
     if (document.getElementById("go-cart")){
         document.getElementById("go-cart").innerHTML = content;
     }
@@ -88,12 +108,12 @@ function renderSelectedItems(){
                 let {id,price,quantity,description} = item;  //Uso desestructuracion
                 let calculate_price = price * quantity;
                 added_item.innerHTML = `
-                        <th scope="row">${counter}</th>
+                        <th class="fs-3" scope="row">${counter}</th>
                                     <td class="fs-3">${description}</td>
-                                    <td class="fs-3"><button id="reduce" class="btn btn-danger text-white mx-2" onclick="reduceQuantity(${id})">-</button>${quantity}<button id="increase" class="btn btn-success text-white mx-2" onclick="increaseQuantity(${id})">+</button></td>
-                                    <td class="fs-3">${price}</td>
-                                    <td class="fs-3">${calculate_price}</td>
-                                    <td class="fs-3" id="delete-item-${counter}"><button class="btn btn-danger delete fw-bold"><a id="del-button" href="#" class="text-white text-decoration-none fs-3" onclick="deleteSingleItem(${id})">[X]</a></button></td>`;
+                                    <td class="fs-3 text-center align-middle"><button id="reduce" class="btn btn-danger text-white mx-2 fs-3 fw-bold" onclick="reduceQuantity(${id})">-</button>${quantity}<button id="increase" class="btn btn-success text-white mx-2 fs-3 fw-bold" onclick="increaseQuantity(${id})">+</button></td>
+                                    <td class="fs-3 text-center align-middle">${price}</td>
+                                    <td class="fs-3 text-center align-middle">${calculate_price}</td>
+                                    <td class="fs-3 align-middle" id="delete-item-${counter}"><button class="btn btn-danger delete fw-bold"><a id="del-button" href="#" class="text-white text-decoration-none fs-3" onclick="deleteSingleItem(${id})">X</a></button></td>`;
                                     added_item.setAttribute("class", "fs-3");
                 document.querySelector("#added-items").appendChild(added_item);
                 total += calculate_price;

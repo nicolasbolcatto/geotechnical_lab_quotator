@@ -4,11 +4,11 @@ function renderItems(){
     let content = "";
     
     for (const item of items){
-        let {id,name,price,standards,description} = item; //Uso desestructuracion
+        let {id,name,price,standards,description,picture} = item; //Uso desestructuracion
         content += `
         <div class="col">
             <div class="card h-100">
-                <img id="item-img" src="/img/liquid_limit.jpg" class="card-img-top" alt="${name}">
+                <img id="item-img" src="/img/${picture}" class="card-img-top" alt="${name}">
                 <div class="card-body bg-dark">
                     <h5 class="card-title fs-2">${name}</h5>
                     <p class="lead fs-3">Precio: $ ${price}</p>
@@ -28,6 +28,7 @@ function renderItems(){
 }
 
 document.getElementById("delete-cart").addEventListener("click",deleteCart);
+
 
 saveItemsLocalStorage(database);
 loadItemsLocalStorage();

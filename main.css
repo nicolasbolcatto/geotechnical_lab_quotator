@@ -11,11 +11,17 @@ body {
   color: white; }
   body header {
     color: #bde037; }
+    body header .navbar button {
+      background-color: #bde037;
+      border-radius: 0.5rem;
+      font-weight: bold;
+      border: white 3px solid; }
   body main #add-personalized {
     background-color: #bde037;
     border-radius: 0.5rem;
     width: 50%;
-    margin: 2rem auto 2rem auto; }
+    margin: 2rem auto 2rem auto;
+    border: white 3px solid; }
     body main #add-personalized #add-button {
       color: #10454f;
       font-weight: bold; }
@@ -43,49 +49,12 @@ body {
       color: white; }
       body main section #shopping-cart #selected-items tbody tr .delete .btn {
         color: red; }
-  body aside .modal {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Stay in place */
-    z-index: 1;
-    /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%;
-    /* Full width */
-    height: 100%;
-    /* Full height */
-    overflow: auto;
-    /* Enable scroll if needed */
-    background-color: black;
-    /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
-    color: black; }
-    body aside .modal .modal-content {
-      background-color: #fefefe;
-      margin: 15% auto;
-      /* 15% from the top and centered */
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-      /* Could be more or less, depending on screen size */ }
-      body aside .modal .modal-content .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold; }
-        body aside .modal .modal-content .close:hover, body aside .modal .modal-content .close:focus {
-          color: black;
-          text-decoration: none;
-          cursor: pointer; }
-    body aside .modal #create-button-div {
-      background-color: #bde037;
-      border-radius: 1rem;
-      width: 50%;
-      margin: 5rem auto;
-      padding: auto; }
-      body aside .modal #create-button-div #create-button {
-        font-weight: bold;
-        width: 100%; }
+  body aside #create-button-div {
+    background-color: #bde037;
+    border-radius: 1rem;
+    width: 50%;
+    margin: 5rem auto;
+    padding: auto; }
+    body aside #create-button-div #create-button {
+      font-weight: bold;
+      width: 100%; }
