@@ -1,4 +1,4 @@
-# geotechnical laboratory quotation app
+# Geotechnical Laboratory Quotation App
 
 Work in progress...
 
@@ -16,24 +16,22 @@ The following languages, platforms, features and technologies are included in th
 - Git and GitHub for version control
 - Bootstrap 5
 - SCSS
-- JavaScript (Conditionals, Loops, DOM manipulation, Events)
+- JavaScript (Conditionals, Loops, DOM manipulation, Events, Promises)
+- Sweet Alert
 
 Still to add:
 
 - Animations and transitions using CSS and AOS (https://michalsnik.github.io/aos/)
-- JavaScript libraries like Sweet Alert
 - jQuery
 - AJAX & Fetch
 
 # Functionality
 
-The web app works as a shopping cart. It also allows the user to add personalized items.
-
-So far, some refactoring is needed in order to allow correct functionality in terms of adding and deleting items.
+The web app works as a shopping cart. It also allows the user to add personalized items and obtain a quotation for the selected tests.
 
 Future possible improvements are:
 
-- Add pictures of each test. 
+- Give functionality to the search bar
 - Automatic calculation of prices based on price indexes and dates.
-- PDF output of the item list, item prices and total price.
+- PDF or Excel output of the item list, item prices and total price.
 - And more to come
