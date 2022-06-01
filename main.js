@@ -1,9 +1,12 @@
 
-function renderItems(){
-    let items = loadItemsLocalStorage();
+
+fetch('./database.json').then(response => {
+    return response.json();
+  }).then(database => {
     let content = "";
-    
-    for (const item of items){
+    //Render items
+
+    for (const item of database){
         let {id,name,price,standards,description,picture} = item; //Uso desestructuracion
         content += `
         <div class="col">
@@ -25,12 +28,33 @@ function renderItems(){
     }
     
     document.getElementById("grid").innerHTML = content;
-}
+
+    //Modals de descripcion
+
+    for (let i = 0; i <= database.length - 1; i++) {
+        let items = loadItemsLocalStorage();
+        let Button = document.getElementById("desc-button-" + (i + 1));
+        let {name,description,standards,unit,picture} = items[i];
+        Button.addEventListener('click',()=>{
+
+            Swal.fire({
+                title: `${name}`,
+                width: 500,
+                html: `<p class="fs-3 py-2">${description}</p>
+                <p class="fs-3 py-2">Normativa: ${standards}</p>
+                <p class="fs-3 py-2">Unidad: ${unit}</p>`,
+                imageUrl: `img/${picture}`,
+                imageWidth: 300
+            })
+        })
+    }
+
+   
+  }).catch(err => {
+    console.log("No fue posible cargar la lista de items");
+  });
 
 document.getElementById("delete-cart").addEventListener("click",deleteCart);
 
-
-saveItemsLocalStorage(database);
-loadItemsLocalStorage();
 updateCartButton();
-renderItems();
+

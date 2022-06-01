@@ -1,3 +1,11 @@
+function saveItemsLocalStorage(array){
+    localStorage.setItem("array", JSON.stringify(array));
+}
+
+function loadItemsLocalStorage(){
+    return JSON.parse(localStorage.getItem("array"));
+}
+
 //Funcion para buscar un item por su id
 
 function searchItem(id){
@@ -11,6 +19,8 @@ function loadCartItems(){
     let cart = JSON.parse(localStorage.getItem("cart")) || []; //Uso operador OR
     return cart;
 }
+
+//Funcion para agregar un item al carrito
 
 function addToCart(id){
     
@@ -28,6 +38,8 @@ function addToCart(id){
     localStorage.setItem("cart",JSON.stringify(itemsInCart));
     updateCartButton();
 }
+
+//Funcion para eliminar el carrito
 
 function deleteCart(){
     Swal.fire({
@@ -55,6 +67,8 @@ function deleteCart(){
     
 }
 
+//Funcion para eliminar un item del carrito
+
 function deleteSingleItem(id){
     let itemsInCart = loadCartItems();
     let itemsInCartUpdate = itemsInCart.filter(x => x.id != id);
@@ -62,6 +76,8 @@ function deleteSingleItem(id){
     updateCartButton();
     renderSelectedItems();
 }
+
+//Funcion para reducir en una unidad un item del carrito
 
 function reduceQuantity(id){
     const itemsInCart = loadCartItems();
@@ -72,6 +88,8 @@ function reduceQuantity(id){
     renderSelectedItems();
 }
 
+//Funcion para aumentar en una unidad un item del carrito
+
 function increaseQuantity(id){
     const itemsInCart = loadCartItems();
     const position = itemsInCart.findIndex(element => element.id == id);
@@ -81,6 +99,8 @@ function increaseQuantity(id){
     renderSelectedItems();
 }
 
+//Funcion que actualiza el numero de items diferentes en el carrito
+
 function updateCartButton(){
     let itemsInCart = loadCartItems();
     let content=`<button type="button" class="btn position-relative fs-2 mx-4">Ir al carrito<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">${itemsInCart.length}</span></button>`;
@@ -89,6 +109,8 @@ function updateCartButton(){
     }
     
 }
+
+//Funcion que muestra los elementos seleccionados del carrito
 
 function renderSelectedItems(){
     if (document.getElementById("main-cart")){
