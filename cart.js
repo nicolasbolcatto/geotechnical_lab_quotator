@@ -149,5 +149,5 @@ function renderSelectedItems(){
 }
 
 document.getElementById("delete-cart").addEventListener("click",deleteCart);
-
+updateCartButton();
 renderSelectedItems();

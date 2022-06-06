@@ -1,6 +1,6 @@
 
 
-fetch('database.json').then(response => {
+fetch('./database.json').then(response => {
     return response.json();
   }).then(database => {
     let content = "";
@@ -54,7 +54,7 @@ fetch('database.json').then(response => {
     console.log("No fue posible cargar la lista de items");
   });
 
-document.getElementById("delete-cart").addEventListener("click",deleteCart);
 
-updateCartButton();
+
+
 
