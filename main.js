@@ -1,6 +1,6 @@
 
 
-fetch('./database.json').then(response => {
+fetch("../database.json").then(response => {
     return response.json();
   }).then(database => {
     let content = "";
