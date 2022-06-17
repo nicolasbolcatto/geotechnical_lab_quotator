@@ -16,7 +16,7 @@ fetch('./database.json').then(response => {
         const body = card.querySelector("[data-body]");
         const footer = card.querySelector("[data-footer]");
         let { id, category, name, price, description, standards, unit, picture, materialRequired } = item;
-        header.innerHTML = `<img id="item-img" src="/img/${picture}" class="card-img-top" alt="${name}">`
+        header.innerHTML = `<img id="item-img" src="./img/${picture}" class="card-img-top" alt="${name}">`
         body.innerHTML = `<div><h5 class="card-title fs-2">${name}</h5></div>
         <div><p class="lead fs-3">Price: $ ${price}</p></div>`
         footer.innerHTML = `<a href="#" id="add-button-${id}" class="btn btn-add fs-2 m-3"> Add to cart </a>
@@ -35,7 +35,7 @@ fetch('./database.json').then(response => {
                 <p class="fs-3 py-2">Standard: ${standards}</p>
                 <p class="fs-3 py-2">Sample type: ${unit}</p>
                 <p class="fs-3 py-2">Material required: ${materialRequired}`,
-                imageUrl: `img/${picture}`,
+                imageUrl: `./img/${picture}`,
                 imageWidth: 300
             })
         })
