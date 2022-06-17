@@ -127,7 +127,7 @@
     {
         "id": 12,
         "category": "Total Stress",
-        "name": "Unconfined Compressive Strenght",
+        "name": "Unconfined Compressive Strength",
         "price": 30,
         "description": "Unconfined compressive strength of soil samples. Remoulding is charged separately ($20 per specimen).",
         "standards": "ASTM D2166",
