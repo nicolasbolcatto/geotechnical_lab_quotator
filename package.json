@@ -16,6 +16,10 @@
     "license": "ISC",
     "devDependencies": {
         "node-sass": "^7.0.1",
-        "nodemon": "^2.0.15"
+        "nodemon": "^2.0.16"
+    },
+    "dependencies": {
+        "jspdf": "^2.5.1",
+        "toastify-js": "^1.11.2"
     }
 }

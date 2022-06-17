@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -6,55 +6,113 @@
   font-size: 62.5%; }
 
 body {
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
   background-color: #10454f;
   font-size: 2rem;
-  color: white; }
-  body header {
-    color: #bde037; }
-    body header .navbar button {
-      background-color: #bde037;
-      border-radius: 0.5rem;
-      font-weight: bold;
-      border: white 3px solid; }
-  body main #add-personalized {
+  color: white;
+  width: 99vw;
+  box-sizing: border-box; }
+  body header #icon {
+    display: block;
+    width: 20vw;
+    margin: auto; }
+  body header .btn {
+    margin-left: 10px;
+    margin-right: 10px;
+    border: solid 2px white;
     background-color: #bde037;
-    border-radius: 0.5rem;
-    width: 50%;
-    margin: 2rem auto 2rem auto;
-    border: white 3px solid; }
-    body main #add-personalized #add-button {
-      color: #10454f;
+    font-weight: bold; }
+    body header .btn:hover {
+      transform: scale(1.05);
+      transition: 0.25s; }
+  body header .navbar-toggler {
+    border: solid 2px white;
+    margin: 5px auto;
+    width: 25vw;
+    height: 50px; }
+    body header .navbar-toggler .navbar-toggler-icon {
+      transform: scale(2); }
+      body header .navbar-toggler .navbar-toggler-icon:hover {
+        transform: scale(2.5);
+        transition: 0.25s ease-in-out; }
+  body header .navbar-collapse {
+    background-color: #10454f; }
+    body header .navbar-collapse .navbar-brand {
+      color: white;
+      font-size: 2rem;
       font-weight: bold; }
-  body main section #list-of-articles {
-    background-color: rgba(114, 114, 114, 0.25); }
-    body main section #list-of-articles #main-container {
-      width: 100%; }
-      body main section #list-of-articles #main-container #item-card {
-        margin: 0;
-        width: 40%; }
-        body main section #list-of-articles #main-container #item-card #item-description {
-          color: #10454f;
-          background-color: #a3aa77;
-          border-radius: 1rem; }
-          body main section #list-of-articles #main-container #item-card #item-description #buttons .btn-add {
-            background-color: #10454f;
-            color: white; }
-          body main section #list-of-articles #main-container #item-card #item-description #buttons .desc {
-            background-color: rgba(128, 130, 116, 0.5);
-            color: white; }
-  body main section #shopping-cart {
-    background-color: rgba(128, 130, 116, 0.5);
-    padding: 2rem; }
-    body main section #shopping-cart #selected-items {
-      color: white; }
-      body main section #shopping-cart #selected-items tbody tr .delete .btn {
-        color: red; }
-  body aside #create-button-div {
+    body header .navbar-collapse #search-wrapper {
+      margin: auto; }
+      body header .navbar-collapse #search-wrapper #search-bar {
+        margin: 5px; }
+  body header #categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    body header #categories .category {
+      text-align: center;
+      margin: 10px;
+      padding-top: auto; }
+      body header #categories .category:hover {
+        cursor: pointer; }
+      body header #categories .category .text {
+        display: inline-block;
+        position: relative; }
+      body header #categories .category .text::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-color: #bde037;
+        transition: width 0.25s ease-out; }
+      body header #categories .category .text:hover::before {
+        width: 100%; }
+  body main #grid .card {
+    padding: 10px;
+    background-color: #10454f;
+    border: none; }
+    body main #grid .card .card-header {
+      padding: 0;
+      border: solid 2px white; }
+      body main #grid .card .card-header .img-card {
+        width: 100%; }
+    body main #grid .card .card-body {
+      border: solid 2px white;
+      background-color: #4f6266; }
+    body main #grid .card .card-footer {
+      border: solid 2px white; }
+      body main #grid .card .card-footer .btn-add {
+        border: solid 2px black;
+        border-radius: 4px;
+        background-color: #bde037;
+        font-weight: bold;
+        width: 90%; }
+        body main #grid .card .card-footer .btn-add:hover {
+          transform: scale(1.05);
+          transition: 0.25s; }
+      body main #grid .card .card-footer .btn-desc {
+        border: solid 2px black;
+        border-radius: 4px;
+        background-color: #a3aa77;
+        font-weight: bold;
+        width: 90%; }
+        body main #grid .card .card-footer .btn-desc:hover {
+          transform: scale(1.05);
+          transition: 0.25s; }
+  body main #grid .hide {
+    display: none; }
+  body main #selected-items #total-price {
+    text-align: end; }
+  body main form input {
+    width: 50vw;
+    height: 5rem; }
+  body main #download {
     background-color: #bde037;
-    border-radius: 1rem;
-    width: 50%;
-    margin: 5rem auto;
-    padding: auto; }
-    body aside #create-button-div #create-button {
-      font-weight: bold;
-      width: 100%; }
+    border: 2px solid white;
+    border-radius: 4px;
+    font-weight: bold; }
+    body main #download:hover {
+      transform: scale(1.05);
+      transition: 0.25s; }

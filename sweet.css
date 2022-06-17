@@ -3,8 +3,16 @@ body.swal2-shown > [aria-hidden="true"] {
     filter: blur(10px);
   }
 
+.swal2-icon{
+    transform: scale(1.5);
+}
+
 .swal2-title{
-    font-size: 25px !important;
+    font-size: 3rem !important;
+}
+
+.swal2-html-container{
+    font-size: 2rem !important;
 }
 
 
@@ -13,6 +21,14 @@ body.swal2-shown > [aria-hidden="true"] {
     height: 50px;
     font-size: 20px !important;
     padding: 5px !important;
+    
+}
+
+.swal2-confirm{
+    background-color:  rgba(16, 69, 79, 1) !important;
+}
+.swal2-deny{
+    background-color:  red !important;
 }
 
 .swal2-validation-message{

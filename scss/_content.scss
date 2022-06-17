@@ -1,87 +1,156 @@
 body {
+    font-family: $primaryFont;
+    overflow-x: hidden;
     background-color: map-get($map: $colors, $key: 'palette1');
     font-size: 2rem;
     color: white;
+    width: 99vw;
+    box-sizing: border-box;
     header {
-        color: map-get($map: $colors, $key: 'palette5');
-        .navbar{
-            button{
-                background-color: map-get($map: $colors, $key: 'palette5');
-                border-radius: 0.5rem;
+        #icon{
+            display: block;
+            width: 20vw;
+            margin: auto;
+        }
+        .btn {
+            margin-left: 10px;
+            margin-right: 10px;
+            border: solid 2px white;
+            background-color: map-get($map: $colors, $key: 'palette5');
+            font-weight: bold;
+            &:hover{
+                transform:scale(1.05);
+                transition: 0.25s;
+            }
+        }
+        .navbar-toggler {
+            border: solid 2px white;
+            margin: 5px auto;
+            width: 25vw;
+            height: 50px;
+            .navbar-toggler-icon{
+                transform: scale(2);
+                &:hover{
+                    transform: scale(2.5);
+                    transition: 0.25s ease-in-out;
+                }
+            }
+
+        }
+        .navbar-collapse {
+            background-color: map-get($map: $colors, $key: 'palette1');
+            .navbar-brand {
+                color: white;
+                font-size: 2rem;
                 font-weight: bold;
-                border: white 3px solid;
+            }
+            #search-wrapper {
+                margin: auto;
+                #search-bar{
+                    margin: 5px;
+                }
+            }
+        }
+        #categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            .category {
+                text-align: center;
+                margin: 10px;
+                padding-top: auto;
+                &:hover{
+                    cursor:pointer;
+                }
+            .text{
+                display: inline-block;
+                position: relative;
+            }
+            .text::before{
+                content:"";
+                position: absolute;
+                left:0;
+                bottom: 0;
+                width: 0;
+                height: 2px;
+                background-color: map-get($map: $colors, $key: 'palette5');
+                transition: width 0.25s ease-out;
+            }
+            .text:hover::before{
+                width: 100%;
+            }
             }
         }
     }
     main {
-
-        #add-personalized {
-            background-color: map-get($map: $colors, $key: 'palette5');
-            border-radius: 0.5rem;
-            width: 50%;
-            margin: 2rem auto 2rem auto;
-            border: white 3px solid;
-            #add-button {
-                color: map-get($map: $colors, $key: 'palette1');
-                font-weight: bold;
-            }
-        }
-        section {
-            #list-of-articles {
-                background-color: map-get($map: $colors, $key: 'background2');
-                #main-container {
-                    width: 100%;
-                    #item-card {
-                        margin: 0;
-                        width: 40%;
-                        #item-description {
-                            color: map-get($map: $colors, $key: 'palette1');
-                            background-color: map-get($map: $colors, $key: 'palette4');
-                            border-radius: 1rem;
-                            #buttons {
-                                .btn-add {
-                                    background-color: map-get($map: $colors, $key: 'palette1');
-                                    color: white;
-                                }
-                                .desc {
-                                    background-color: map-get($map: $colors, $key: 'palette3');
-                                    color: white;
-                                }
-                            }
-                        }
+        //index.html
+        #grid {
+            .card{
+                padding: 10px;
+                background-color:  map-get($map: $colors, $key: 'palette1');
+                border: none;
+                .card-header{
+                    padding: 0;
+                    border: solid 2px white;
+                    .img-card{
+                        width: 100%;
                     }
                 }
-            }
-            #shopping-cart {
-                background-color: map-get($map: $colors, $key: 'palette3');
-                padding: 2rem;
-                #selected-items {
-                    color: white;
-                    tbody {
-                        tr {
-                            .delete {
-                                .btn {
-                                    color: red;
-                                }
-                            }
+                .card-body {
+                    border: solid 2px white;
+                    background-color: map-get($map: $colors, $key: 'palette2');
+                }
+                .card-footer{
+                    border: solid 2px white;
+                    .btn-add {
+                        border: solid 2px black;
+                        border-radius: 4px;
+                        background-color: map-get($map: $colors, $key: 'palette5');
+                        font-weight: bold;
+                        width: 90%;
+                        &:hover{
+                            transform:scale(1.05);
+                            transition: 0.25s;
+                        }
+                    }
+                    .btn-desc {
+                        border: solid 2px black;
+                        border-radius: 4px;
+                        background-color: map-get($map: $colors, $key: 'palette4');
+                        font-weight: bold;
+                        width: 90%;
+                        &:hover{
+                            transform:scale(1.05);
+                            transition: 0.25s;
                         }
                     }
                 }
             }
             
-        }
-    }
-    aside {
-            #create-button-div {
-                background-color: map-get($map: $colors, $key: 'palette5');
-                border-radius: 1rem;
-                width: 50%;
-                margin: 5rem auto;
-                padding: auto;
-                #create-button {
-                    font-weight: bold;
-                    width: 100%;
-                }
+            .hide {
+                display: none;
             }
         }
-}
+        //cart.html
+        #selected-items{
+            #total-price{
+                text-align: end;
+            }
+        }
+        form{
+            input{
+                width: 50vw;
+                height: 5rem;
+            }
+        }
+        #download{
+            background-color: map-get($map: $colors, $key: 'palette5');
+            border: 2px solid white;
+            border-radius: 4px;
+            font-weight: bold;
+            &:hover{
+                transform:scale(1.05);
+                transition: 0.25s;
+            }
+        }
+        }
+    }
